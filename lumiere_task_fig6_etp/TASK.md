@@ -5,9 +5,9 @@
 
 | Run | Answer | Outcome |
 |---|---|---|
-| Test run 1 | 45.0 | Fail |
-| Test run 2 | 45.0 | Fail |
-| Test run 3 | 17.5 | Pass (after zooming into every disk separately) |
+| Test run 1 (Opus) | 45.0 | Fail |
+| Test run 2 (Opus) | 45.0 | Fail |
+| Test run 3 (Opus) | pending | |
 | **GTFA** | **17.5** | |
 
 In every failed run the model noticed a thin dark ring around the row A ertapenem disk but called it "a disk-edge artifact" or "not a real zone". It therefore counted row A, giving (33 + 21)/120 = 45.0%. The ring is absent around every other disk on the same plates, so it is not a disk-edge artifact. The platform's own runs are the real check.
@@ -55,9 +55,9 @@ Licensee MDPI, Basel, Switzerland. This article is an open access article distri
 
 ### 10. Prompt
 ```
-Image 1 shows a carbapenem-resistance work-up of four Enterobacterales isolates, one per row (A–D). Each isolate was tested by disk diffusion on plain Mueller-Hinton agar (column 1) and on the same agar containing an AmpC inhibitor, either cloxacillin 250 mg/L (column 2) or oxacillin 300 mg/L (column 3); all twelve plates carry the same seven disks, labelled with standard antibiotic abbreviations.
+Image 1 shows a carbapenem-resistance work-up of four Enterobacterales isolates, one per row (A–D). Each isolate was tested by disk diffusion on plain Mueller-Hinton agar (column 1) and on the same agar containing either cloxacillin 250 mg/L (column 2) or oxacillin 300 mg/L (column 3); all twelve plates carry the same seven disks, labelled with standard antibiotic abbreviations.
 
-A reference laboratory uses this three-plate set-up for 120 carbapenem-non-susceptible referrals, of which 33, 21, 38 and 28 reproduce exactly the patterns of rows A, B, C and D, respectively. It reads only the ertapenem disk and ignores colonies that grow inside an otherwise clear zone. A referral is reported as a presumptive carbapenemase producer only when bacterial growth touches the ertapenem disk on the plain agar and still touches it on both inhibitor-containing plates.
+A reference laboratory uses this three-plate set-up for 120 carbapenem-non-susceptible referrals, of which 33, 21, 38 and 28 reproduce exactly the patterns of rows A, B, C and D, respectively. It reads only the ertapenem disk, scores a plate as ertapenem-resistant only when bacterial growth reaches the disk edge, and ignores colonies that grow inside an otherwise clear zone. A referral is reported as a presumptive carbapenemase producer when it is ertapenem-resistant on the plain agar and that resistance cannot be attributed to AmpC overproduction combined with reduced permeability.
 
 What percentage of the 120 referrals are reported as presumptive carbapenemase producers? Give the answer to one decimal place (for example, 12.5).
 ```
@@ -105,7 +105,7 @@ Image quality is good and in focus. Background tone varies from row to row, and 
 ```
 Step 1: Map the figure. Each row (A–D) is one isolate. Column 1 is plain Mueller-Hinton agar, column 2 contains cloxacillin and column 3 contains oxacillin. Only the ertapenem (ETP) disk is read.
 Step 2: Explain the logic. An Enterobacterales isolate can be carbapenem-non-susceptible either because it makes a carbapenemase or because it overproduces an AmpC cephalosporinase while letting less drug in (porin loss). Cloxacillin and oxacillin block AmpC, so the second mechanism is undone on inhibitor agar and an ertapenem zone reappears; a carbapenemase is not blocked, so growth still reaches the disk.
-Step 3: Fix the reading rule. A disk is "touched" by growth only when no cleared agar separates it from the lawn. Any band of cleared agar, however thin, is an inhibition zone; colonies scattered inside an otherwise clear zone are ignored, as the prompt instructs.
+Step 3: Fix the reading rule. A plate is scored ertapenem-resistant only when growth reaches the disk edge, i.e. no cleared agar separates disk and lawn. Any band of cleared agar, however thin, is an inhibition zone; colonies scattered inside an otherwise clear zone are ignored, as the prompt instructs. Applying Step 2, resistance on plain agar is attributable to AmpC + impermeability if it disappears on the cloxacillin and oxacillin plates; it points to a carbapenemase if growth still reaches the disk on both.
 Step 4: Row A, plate 1. A thin band of cleared agar encircles ETP. It is absent around the other six disks on the same plate, so it is a real zone, not a disk or lighting artefact. Growth does not touch the disk on plain agar, so row A is not reported.
 Step 5: Row B, plates 1–3. ETP sits directly on the lawn on all three plates with no cleared band. Growth touches the disk on plain agar and on both inhibitor plates, so row B is reported.
 Step 6: Row C, plate 1. ETP is surrounded by a clear zone dotted with small colonies. Ignoring those colonies, growth does not touch the disk, so row C is not reported.
@@ -144,6 +144,7 @@ Distractors (incorrect answers only). Note that in testing we provided the model
 - 0.0: no row reported (the bare ETP disks of row B overlooked).
 
 ### 22. Answers to likely checker or reviewer flags
+- **DOMAIN_KNOWLEDGE_FLOOR (earlier version).** The prompt no longer spells out the plate-by-plate decision. It gives only arbitrary scoring conventions (which disk, when a plate counts as resistant, ignore inner colonies) and asks for resistance "that cannot be attributed to AmpC overproduction combined with reduced permeability". The solver has to supply the biology: cloxacillin and oxacillin inhibit AmpC, so AmpC-plus-impermeability resistance disappears on the inhibitor plates, while carbapenemase resistance persists on both.
 - **"The row A band is just the disk edge."** The band encircles ETP on all three row A plates, but not the other six disks on those plates, which are the same size and type. It is therefore inhibition, not an artefact. Under the EUCAST reading rule (read at complete inhibition), growth does not reach the ETP disk.
 - **Row C colonies.** The prompt says to ignore colonies inside an otherwise clear zone. Section 2.3 of the source says the same.
 - **Answer in the paper?** No. The referral numbers (33, 21, 38 and 28 of 120) are hypothetical, and the paper never computes this percentage.
