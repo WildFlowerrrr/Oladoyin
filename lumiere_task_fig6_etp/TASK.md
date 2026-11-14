@@ -7,7 +7,7 @@
 |---|---|---|
 | Test run 1 (Opus) | 45.0 | Fail |
 | Test run 2 (Opus) | 45.0 | Fail |
-| Test run 3 (Opus) | pending | |
+| Test run 3 (Opus) | 45.0 | Fail |
 | **GTFA** | **17.5** | |
 
 In every failed run the model noticed a thin dark ring around the row A ertapenem disk but called it "a disk-edge artifact" or "not a real zone". It therefore counted row A, giving (33 + 21)/120 = 45.0%. The ring is absent around every other disk on the same plates, so it is not a disk-edge artifact. The platform's own runs are the real check.
