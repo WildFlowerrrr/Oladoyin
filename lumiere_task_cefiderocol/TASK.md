@@ -3,6 +3,9 @@
 
 Subtype: **Agar plate assays – zone of inhibition** (Petri Dishes & Culture Plates)
 
+
+> **STATUS: do not submit as-is.** Prompt v2 passed the Prompt Checker, but both platform models answered correctly (R, S, S, R), so the "both must fail" bar was not met. Six further designs were blind-tested; none reliably failed strong models. See the session summary.
+
 ---
 
 ## 1. Source and license
