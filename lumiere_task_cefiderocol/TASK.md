@@ -27,13 +27,15 @@ Each tile still shows its small source panel ID in the top-left corner ("(A2)" e
 
 ---
 
-## 2. Prompt (about 830 characters; under the 2,000 limit)
+## 2. Prompt (v2, 1,159 characters; revised after Prompt Checker feedback)
 
-Four clinical isolates of the Acinetobacter baumannii-calcoaceticus complex were tested for cefiderocol susceptibility by disk diffusion (Images 1–4, one isolate per image). For each isolate, a lawn was prepared from a 0.5 McFarland suspension on Mueller-Hinton agar, a 30 µg cefiderocol disk was applied, and the plate was incubated at 35 °C for 16–20 h before being photographed. No ruler was included in the photographs.
+Four clinical isolates of the Acinetobacter baumannii-calcoaceticus complex were tested for cefiderocol susceptibility by disk diffusion (Images 1–4, one isolate per image). For each isolate, a lawn was prepared from a 0.5 McFarland suspension on Mueller-Hinton agar, a 30 µg cefiderocol disk with a diameter of 6 mm was applied, and the plate was incubated at 35 °C for 16–20 h before being photographed. No ruler was included in the photographs; use the 6 mm disk in each image as the scale for estimating zone diameters.
 
-Using the CLSI M100 (34th ed.) cefiderocol disk diffusion breakpoints for Acinetobacter spp. (susceptible ≥15 mm, intermediate 11–14 mm, resistant ≤10 mm) and standard CLSI disk-reading practice, determine the interpretive category that should be reported for each isolate.
+Use these reading rules: the zone diameter is measured across the disk to the edge of the area with no visible growth, and includes the disk. Rare, isolated small colonies or faint haze inside an otherwise clear zone are ignored. If numerous colonies or confluent growth extend up to the edge of the disk, the zone diameter is recorded as 6 mm.
 
-Report the answer as an ordered list for Images 1, 2, 3 and 4 using S, I or R, separated by commas (format example: I, I, S, R).
+Interpret each zone diameter with these breakpoints: susceptible ≥15 mm, intermediate 11–14 mm, resistant ≤10 mm.
+
+Report the interpretive category for each isolate as an ordered list for Images 1, 2, 3 and 4 using S, I or R, separated by commas (format example: I, I, S, R).
 
 Answer format on the form: **Ordered list** (text, case-insensitive)
 
@@ -47,7 +49,7 @@ Answer format on the form: **Ordered list** (text, case-insensitive)
 
 ## 4. Step-by-step solution
 
-Step 1. Establish the scale. No ruler is present. The 30 µg antimicrobial disk is a standard 6 mm paper disk, so in every image the disk diameter is the internal 6 mm reference, and each zone is estimated as a multiple of the disk diameter.
+Step 1. Establish the scale. No ruler is present. As the prompt states, the disk is 6 mm, so in every image the disk diameter is the internal 6 mm reference, and each zone is estimated as a multiple of the disk diameter.
 
 Step 2. Image 1, observation. A dark inhibition area surrounds the disk and reaches about 2 disk diameters across. Inside it are dozens of discrete, large, round, cream colonies, several of them touching or immediately next to the disk edge. Fine dense speckling of microcolonies also fills the dark area.
 
@@ -126,20 +128,32 @@ Distractors (incorrect answers only). Note that in testing we provided the model
 
 ## 8. Model failure: blind test results (run before submission)
 
-Three independent runs that saw only the prompt and images:
+Prompt v1 (with "standard CLSI disk-reading practice"):
 
-| Run | Answer | Result |
-|---|---|---|
-| 1 | R, S, S, S | FAIL on Image 4 |
-| 2 | I, S, S, S | FAIL on Images 1 and 4 |
-| 3 | I, S, S, S | FAIL on Images 1 and 4 |
+| Run | Answer |
+|---|---|
+| 1 | R, S, S, S |
+| 2 | I, S, S, S |
+| 3 | I, S, S, S |
 
-The real check is the platform's own model runs at the Attempt stage, and their results may differ.
+Prompt v2 (explicit reading rules and 6 mm disk):
+
+| Run | Answer |
+|---|---|
+| 1 | I, S, S, S |
+| 2 | R, S, S, S |
+| 3 | R, S, S, S |
+
+All six runs failed, against GTFA R, S, S, R. The real check is the platform's own model runs at the Attempt stage.
+
+### Prompt Checker findings addressed in v2
+1. **NON_FOUNDATIONAL_REFERENCE** ("standard CLSI disk-reading practice"): removed. The reading rules are now stated explicitly in the prompt.
+2. **MISSING_CONSTANT_VALUES** ("No ruler was included"): the disk diameter (6 mm) is now stated, and the prompt says to use it as the scale.
 
 ### Failure justification (draft; rewrite it to quote the actual platform responses)
-- **Error type:** Figure-based quantitative estimation error. An alternative is "Data extraction error".
-- **Explanation:** The models used the 6 mm disk correctly as a scale and applied the breakpoints correctly, but they put the zone boundary in the wrong place.
-  - **Image 4:** they took the light-grey hazy agar with concentric rings for a clear zone carrying ignorable trailing haze, and measured to the outer ring (about 18–22 mm, so S). The image actually shows confluent growth with a double halo reaching the disk, with no colony-free zone (6 mm, so R).
-  - **Image 1:** two of the three runs treated the numerous large colonies growing up to the disk as rare isolated colonies and measured the outer edge of the dark area (about 12 mm, so I).
+- **Error type:** Figure-based quantitative estimation error.
+- **Explanation:** The models used the 6 mm disk as a scale and applied the given rules and breakpoints, but misread what is growth and what is not.
+  - **Image 4:** they took the light-grey agar covered with confluent hazy growth and concentric rings for "faint haze inside an otherwise clear zone". They ignored it and measured to the outer ring (about 16–22 mm, so S). The image actually shows confluent growth reaching the disk edge, with no clear zone, which the rules record as 6 mm (R).
+  - **Image 1:** one run classified the numerous large colonies growing up to the disk as "rare, isolated" colonies, ignored them, and recorded about 11 mm (I) instead of 6 mm (R).
 
-  These are signal-versus-artifact misreadings of the plate. They are not OCR, arithmetic or knowledge errors, because the breakpoints were given and the arithmetic was correct.
+  These are signal-versus-artifact misreadings of the plate. They are not arithmetic or knowledge errors, because the rules and breakpoints were supplied.
