@@ -1,16 +1,16 @@
-# Project Lumière (Life Sciences): Petri Dishes & Culture Plates
-## Presumptive carbapenemase detection on inhibitor-supplemented agar (Figure 6)
+# Project Lumière (Life Sciences) – Petri Dishes & Culture Plates
+## Carbapenem-resistance work-up: is ertapenem resistance reversed by AmpC inhibitors? (Figure 6)
 
-### Pre-test (blind runs before submission)
+### Blind pre-test before submission (prompt as in section 10)
 
-| Run | Final answer | Result |
+| Run | Answer | Outcome |
 |---|---|---|
-| Test 1 | 41 | FAIL |
-| Test 2 | 41 | FAIL |
-| Test 3 | 41 | FAIL |
-| **GTFA** | **17** | |
+| Test run 1 | 45.0 | Fail |
+| Test run 2 | 45.0 | Fail |
+| Test run 3 | 17.5 | Pass (after zooming into every disk separately) |
+| **GTFA** | **17.5** | |
 
-All three runs failed in the same way. They counted row A (24 + 17 = 41) because they missed, or dismissed as "a faint rim, not a real zone", the narrow ring of clear agar around ertapenem on the row A plates. The platform's own model runs are the real check.
+In every failed run the model noticed a thin dark ring around the row A ertapenem disk but called it "a disk-edge artifact" or "not a real zone". It therefore counted row A, giving (33 + 21)/120 = 45.0%. The ring is absent around every other disk on the same plates, so it is not a disk-edge artifact. The platform's own runs are the real check.
 
 ---
 
@@ -20,8 +20,8 @@ Petri Dishes & Culture Plates
 ### 2. Subdomain
 Microbiology
 
-### 3. Where did the image come from?
-External: open-access (CC BY 4.0)
+### 3. Image origin
+External, open access (CC BY 4.0)
 
 ### 4. Source URL / DOI
 ```
@@ -47,109 +47,106 @@ Licensee MDPI, Basel, Switzerland. This article is an open access article distri
 ```
 
 ### 9. Image
-- File: `Image1.jpg`, uploaded as **Image 1**.
-- Source: Figure 6 of the main article, uploaded whole with no cropping or edits. This is the publisher's high-resolution version (2356 × 3116 px), converted from PNG to JPEG (1.4 MB) only to keep the file small.
-- Direct image link: https://mdpi-res.com/antibiotics/antibiotics-14-00616/article_deploy/html/images/antibiotics-14-00616-g006.png
-- Original caption (not part of the image): *Carbapenemase producers: (A) NDM-4 + CTX-M-15 + CMY-6 E. coli and high-carbapenem MIC (>32 mg/L for ertapenem, imipenem, and meropenem); (B) KPC-2 + SHV-11 K. pneumoniae; (C) OXA-48 + TEM-1 + CTX-M-15 + OXA-1 E. cloacae; (D) OXA-181 E. coli… (1) MHA; (2) MHA + 250 mg/L cloxacillin (MHC250); (3) MHA + 300 mg/L oxacillin (MHO300).*
-- **Earlier tasks from this paper:** Supplementary Figure S3 and main Figure 5 were used before. Figure 6 has not been used.
+- `Image1.jpg`, uploaded as **Image 1**.
+- Main-article Figure 6, uploaded complete and unedited. This is the publisher's full-resolution file (2356 × 3116 px), saved as JPEG (1.4 MB).
+- Publisher file: https://mdpi-res.com/antibiotics/antibiotics-14-00616/article_deploy/html/images/antibiotics-14-00616-g006.png
+- The figure legend is not part of the image. It identifies the rows as (A) NDM-4 + CTX-M-15 + CMY-6 *E. coli*, (B) KPC-2 + SHV-11 *K. pneumoniae*, (C) OXA-48 + TEM-1 + CTX-M-15 + OXA-1 *E. cloacae* and (D) OXA-181 *E. coli*, and the columns as (1) MHA, (2) MHA + 250 mg/L cloxacillin and (3) MHA + 300 mg/L oxacillin.
+- Earlier tasks drew on Supplementary Figure S3 and Figure 5 of this article. Figure 6 has not been used.
 
 ### 10. Prompt
 ```
-Image 1 shows disk-diffusion antibiograms of four Enterobacterales isolates (rows A to D), each set up on three Mueller-Hinton-based media (columns 1 to 3): unsupplemented agar (1), agar supplemented with 250 mg/L cloxacillin (2) and agar supplemented with 300 mg/L oxacillin (3). Every plate carries the same seven antimicrobial disks, labelled by their standard abbreviations. A laboratory screens 90 isolates in the same way; 24, 17, 29 and 20 of them reproduce on all three media the patterns shown in rows A, B, C and D, respectively. Using only the ertapenem disk, read as in routine inhibitor-supplemented agar testing for AmpC detection, the laboratory classifies an isolate as a presumptive carbapenemase producer if bacterial growth reaches the ertapenem disk edge on the unsupplemented agar (1) and this resistance is reversed by neither inhibitor, i.e., growth also reaches the ertapenem disk edge on both the cloxacillin (2) and oxacillin (3) agar. How many of the 90 isolates are classified as presumptive carbapenemase producers?
+Image 1 shows a carbapenem-resistance work-up of four Enterobacterales isolates, one per row (A–D). Each isolate was tested by disk diffusion on plain Mueller-Hinton agar (column 1) and on the same agar containing an AmpC inhibitor, either cloxacillin 250 mg/L (column 2) or oxacillin 300 mg/L (column 3); all twelve plates carry the same seven disks, labelled with standard antibiotic abbreviations.
 
-Report the answer as an integer (for example, 40).
+A reference laboratory uses this three-plate set-up for 120 carbapenem-non-susceptible referrals, of which 33, 21, 38 and 28 reproduce exactly the patterns of rows A, B, C and D, respectively. It reads only the ertapenem disk and ignores colonies that grow inside an otherwise clear zone. A referral is reported as a presumptive carbapenemase producer only when bacterial growth touches the ertapenem disk on the plain agar and still touches it on both inhibitor-containing plates.
+
+What percentage of the 120 referrals are reported as presumptive carbapenemase producers? Give the answer to one decimal place (for example, 12.5).
 ```
 
 ### 11. Ground Truth Final Answer (GTFA)
 ```
-17
+17.5
 ```
 
 ### 12. Answer format
-Integer
+Decimal (one decimal place)
 
 ### 13. Model responses
-Fill in from the platform: Block 1 – Response 1: ___; Block 2 – Response 1: ___. GTFA: 17.
+To fill in from the platform: Block 1 – Response 1: ___; Block 2 – Response 1: ___.
 
-### 14–16. Model failure identification / response to justify / error type
-Select both failed responses, justify Block 1 – Response 1, error type: **Data extraction error**.
+### 14–16. Failed responses / response to justify / error type
+Mark every response that is not 17.5 as failed, justify Block 1, and choose error type **Data extraction error**.
 
-### 17. Failure justification (draft; replace each [quote …] with the exact sentence from the platform response)
+### 17. Failure justification (draft; swap each [quote …] for the model's own sentence)
 ```
-Block 1 correctly identifies the layout (rows A to D as isolates; columns 1 to 3 as unsupplemented, cloxacillin and oxacillin agar) and correctly applies the rule that carbapenem resistance not reversed by either AmpC inhibitor indicates a presumptive carbapenemase. It also correctly excludes row C (a narrow inhibition zone around ertapenem on all three media, with scattered colonies inside it) and row D (large ertapenem zones). Its error is in extracting what the row A plates show around ertapenem. It states [quote from Block 1] and therefore counts the 24 row A isolates. In Image 1, the ertapenem disk on each row A plate is surrounded by a narrow ring of clear agar, only slightly wider than the disk, that separates the disk from the lawn; the cefotaxime and ticarcillin disks on the same plates have no such ring. Read at the edge of complete growth inhibition, growth therefore does not reach the ertapenem disk edge on plate A(1), so row A does not meet the first condition. Only row B (no ertapenem zone on any of the three media) qualifies. The correct total is 17, not 24 + 17 = 41. The failure comes from misreading visual evidence (dismissing or missing the narrow ertapenem ring on row A), not from text recognition, arithmetic or downstream reasoning.
+The response sets up the problem correctly. It treats rows A–D as four isolates and columns 1–3 as plain, cloxacillin and oxacillin agar, applies the reporting rule to the ertapenem disk only, and rightly excludes row C (a clear ertapenem zone whose scattered inner colonies are ignored) and row D (a wide ertapenem zone). The error lies in what it extracts from row A. It writes [quote …] and so adds the 33 row A referrals to the 21 from row B, giving 54/120 = 45.0%. On every row A plate, Image 1 shows a thin band of cleared agar encircling the ertapenem disk. No such band surrounds the CTX, CAZ, ATM, FOX, TCC or TIC disks on the same plates, so it is not a feature of the disk edge or the lighting: it is a narrow inhibition zone. Growth therefore does not touch the ertapenem disk on plate A1, and row A fails the first condition. Only row B qualifies, so the answer is 21/120 = 17.5%. The mistake is a misreading of the plate, not text recognition, arithmetic or downstream reasoning.
 ```
 
 ### (Backup) Failure justification (Block 2)
 ```
-Block 2 reaches 41 by counting row A (24) and row B (17). It reads the ertapenem disk on the row A plates as having growth up to the disk edge [quote from Block 2], but Image 1 shows a narrow ring of clear agar around the ertapenem disk on the row A plates, absent from the neighbouring cefotaxime and ticarcillin disks, so growth does not reach the ertapenem disk edge on A(1) and row A does not qualify. The correct answer is 17 (row B only). The error is a misreading of visual evidence, not an OCR, arithmetic or downstream-reasoning error.
+This response also arrives at 45.0% by counting rows A and B. It describes the row A ertapenem disk as [quote …], but the thin band of cleared agar around that disk appears on all three row A plates and around no other disk on them, so it is a genuine (narrow) inhibition zone and growth does not touch the disk on plain agar. With row A excluded, only the 21 row B referrals meet the rule: 21/120 = 17.5%. The error is in reading the image, not in OCR, calculation or later reasoning.
 ```
 
 ### 18. Image description
 ```
-Modality and layout: a composite of twelve colour photographs of round agar plates taken from above on a dark background, arranged in four rows of three. Each row is labelled at its top left in bold black text, (A), (B), (C) and (D) from top to bottom, and each photograph is labelled at its bottom right in bold black text on a white box, (1), (2) and (3) from left to right. Every plate carries seven round white paper disks of equal size, printed in black capitals: ETP (top centre), CAZ (upper left), ATM (upper right), TCC (centre left), CTX (lower left), FOX (lower right) and TIC (bottom centre). There are no arrows, scale bars or measurements; several plates carry handwritten dark marker notes.
+The image is a 4 × 3 grid of top-down colour photographs of round Petri dishes on a dark backdrop. A bold black letter in parentheses, (A) to (D), marks the start of each row, and a bold number in a white box, (1) to (3), sits in the lower right corner of each photograph. All twelve dishes hold the same arrangement of seven white paper disks printed with black abbreviations: ETP at the top, CAZ upper left, ATM upper right, TCC left of centre, CTX lower left, FOX lower right and TIC at the bottom. Some dishes bear hand-written marker scribbles; there are no rulers, arrows or other overlays.
 
-Row A (pale grey-green lawn with visible streak lines on all three plates): the lawn reaches CAZ, ATM, TCC, CTX, FOX and TIC with no dark area around them. ETP on each of the three plates is surrounded by a very narrow darker ring, only slightly wider than the disk, with a fuzzy, finely speckled outer edge.
+Top row (A): the lawn is a pale grey-green with fine streaking. Six disks rest directly on the lawn. The ETP disk on each of the three dishes is encircled by a thin dark band, barely wider than the disk itself, whose outer margin is soft and speckled.
 
-Row B (dark blue-grey background with fine streak lines): ETP, CAZ, ATM, TCC and TIC sit directly on the lawn with no darker ring; FOX shows at most a faint thin rim. CTX on all three plates is surrounded by a narrow but distinct dark ring.
+Second row (B): the background looks dark blue-grey and streaked. ETP, CAZ, ATM, TCC and TIC rest directly on the lawn; FOX has at most a hairline rim. A slim but well-defined dark ring encircles CTX on all three dishes.
 
-Row C (pale, slightly mottled lawn): ETP on all three plates is surrounded by a dark ring roughly one and a half to two disk widths across, with small pale dots scattered within and along the ring. CAZ has a medium-sized dark area on all three plates (partly overlapped by dark marker ink on plates 2 and 3); ATM has a smaller fuzzy dark ring; CTX, TCC, FOX and TIC sit on the pale lawn without a dark area.
+Third row (C): a pale, slightly blotchy lawn. Around ETP on every dish lies a dark ring about one and a half to two disk diameters wide, sprinkled with small pale specks. CAZ sits in a medium-sized dark patch (partly overlapped by marker ink on dishes 2 and 3) and ATM in a smaller hazy ring; CTX, TCC, FOX and TIC rest on the lawn.
 
-Row D: on all three plates ETP, CAZ, ATM, CTX and FOX are each surrounded by a large round dark area roughly three or more disk widths across; the ETP area carries small pale colonies near its upper margin. TCC and TIC sit on the pale lawn between these areas without a dark area of their own.
+Bottom row (D): ETP, CAZ, ATM, CTX and FOX each sit at the centre of a broad round dark area spanning several disk diameters; a few pale specks lie near the upper margin of the ETP area. TCC and TIC rest on the pale lawn between these areas.
 
-Quality: the photographs are sharp; lighting and background colour differ between rows (grey-green in A, dark blue-grey in B, pale in C and D). The narrow rings around ETP in row A and around CTX in row B are low-contrast features.
+Image quality is good and in focus. Background tone varies from row to row, and the thin bands around ETP in row A and CTX in row B are the lowest-contrast features in the figure.
 ```
 
 ### 19. Step-by-step solution
 ```
-Step 1: Identify the layout: rows A to D are four isolates; columns (1), (2) and (3) are unsupplemented Mueller-Hinton agar, cloxacillin-supplemented agar and oxacillin-supplemented agar. Only the ertapenem (ETP) disk is used.
-Step 2: State the biology: carbapenem non-susceptibility in Enterobacterales can result from a true carbapenemase or from AmpC (class C) overproduction combined with reduced porin expression. Cloxacillin and oxacillin inhibit AmpC, so AmpC-plus-porin resistance is reversed (an ertapenem zone appears) on the supplemented media, whereas carbapenemase-mediated resistance is not.
-Step 3: State the reading convention for inhibitor-supplemented agar: zones are read at the edge of complete growth inhibition; isolated mutant colonies inside a zone are ignored and the outer edge is read. Any ring of clear agar between the disk and the lawn, however narrow, is an inhibition zone, so the disk does not show growth reaching its edge.
-Step 4: Row A, ETP, plate (1): a narrow ring of clear agar, only slightly wider than the disk, separates the disk from the lawn (the CTX and TIC disks on the same plate have no such ring). Growth does not reach the ETP disk edge, so the first condition fails. Row A is not classified.
-Step 5: Row B, ETP: the disk sits directly on the lawn on (1), (2) and (3); there is no ring on any plate. Growth reaches the disk edge on the unsupplemented agar and the resistance is reversed by neither inhibitor. Row B is classified as a presumptive carbapenemase producer.
-Step 6: Row C, ETP, plate (1): a dark inhibition zone surrounds the disk; the small colonies scattered inside it are ignored. Growth does not reach the disk edge, so row C is not classified.
-Step 7: Row D, ETP, plate (1): a large inhibition zone surrounds the disk. Row D is not classified.
-Step 8: Count the classified isolates: row B = 17; rows A, C and D = 0.
-Final Answer: 17
+Step 1: Map the figure. Each row (A–D) is one isolate. Column 1 is plain Mueller-Hinton agar, column 2 contains cloxacillin and column 3 contains oxacillin. Only the ertapenem (ETP) disk is read.
+Step 2: Explain the logic. An Enterobacterales isolate can be carbapenem-non-susceptible either because it makes a carbapenemase or because it overproduces an AmpC cephalosporinase while letting less drug in (porin loss). Cloxacillin and oxacillin block AmpC, so the second mechanism is undone on inhibitor agar and an ertapenem zone reappears; a carbapenemase is not blocked, so growth still reaches the disk.
+Step 3: Fix the reading rule. A disk is "touched" by growth only when no cleared agar separates it from the lawn. Any band of cleared agar, however thin, is an inhibition zone; colonies scattered inside an otherwise clear zone are ignored, as the prompt instructs.
+Step 4: Row A, plate 1. A thin band of cleared agar encircles ETP. It is absent around the other six disks on the same plate, so it is a real zone, not a disk or lighting artefact. Growth does not touch the disk on plain agar, so row A is not reported.
+Step 5: Row B, plates 1–3. ETP sits directly on the lawn on all three plates with no cleared band. Growth touches the disk on plain agar and on both inhibitor plates, so row B is reported.
+Step 6: Row C, plate 1. ETP is surrounded by a clear zone dotted with small colonies. Ignoring those colonies, growth does not touch the disk, so row C is not reported.
+Step 7: Row D, plate 1. ETP lies inside a wide clear zone, so row D is not reported.
+Step 8: Only row B is reported: 21 of the 120 referrals.
+Step 9: Percentage = 21 / 120 × 100 = 17.5%.
+Final Answer: 17.5
 ```
 
 ### 20. References
 ```
-1. Source of the image, strains, media and reading convention:
-Oxacillin-Supplemented Mueller-Hinton Agar for In Vitro Inhibition of Ambler Class C β-Lactamases in Enterobacterales. Antibiotics 2025, 14(6), 616. https://doi.org/10.3390/antibiotics14060616 (open-access full text: https://www.mdpi.com/2079-6382/14/6/616 ; PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC12189709/)
-- Figure 6 and its caption: (A) NDM-4 + CTX-M-15 + CMY-6 E. coli; (B) KPC-2 + SHV-11 K. pneumoniae; (C) OXA-48 + TEM-1 + CTX-M-15 + OXA-1 E. cloacae; (D) OXA-181 E. coli; (1) MHA, (2) MHA + 250 mg/L cloxacillin, (3) MHA + 300 mg/L oxacillin; ETP = ertapenem 10 µg. Verifies the layout and plate identities used in Steps 1 and 4–7.
-- Introduction: overproduction of cephalosporinases (AmpC) combined with reduced porin expression may lead to carbapenem resistance, and inhibiting AmpC uncovers hidden carbapenemases. Supports Step 2.
-- Section 2.4 (Carbapenemase producers): 30/41 carbapenemase producers showed no significant increase in diameters on MHC250 or MHO300 (Figure 6A–D). Supports Step 2.
-- Section 2.3: "Sometimes, mutants continue to appear in the inhibition zone for AmpC-producing strains. For the purposes of diagnosing AmpC hyperproduction, they should be ignored, and the outer diameter measured." Supports Steps 3 and 6.
-
-2. Disk-diffusion reading at the edge of complete growth inhibition (any clear zone between disk and lawn, however narrow, is an inhibition zone):
-EUCAST Disk Diffusion Method for Antimicrobial Susceptibility Testing – Reading Guide (current version). https://www.eucast.org/ast_of_bacteria/disk_diffusion_methodology – section on reading zone edges for Enterobacterales. Supports Steps 3 and 4.
-
-3. Phenotypic detection of AmpC and carbapenemases:
-EUCAST Guidelines for detection of resistance mechanisms and specific resistances of clinical and/or epidemiological importance (version 2.0). https://www.eucast.org/resistance_mechanisms – sections on acquired AmpC (cloxacillin-based confirmation) and carbapenemase-producing Enterobacterales. Supports Step 2.
+1. Image source and supporting text: Oxacillin-Supplemented Mueller-Hinton Agar for In Vitro Inhibition of Ambler Class C β-Lactamases in Enterobacterales. Antibiotics 2025, 14(6), 616. https://doi.org/10.3390/antibiotics14060616 (full text: https://www.mdpi.com/2079-6382/14/6/616; PMC12189709)
+   - Figure 6 legend: row and column identities (NDM-4/CTX-M-15/CMY-6 E. coli; KPC-2/SHV-11 K. pneumoniae; OXA-48/TEM-1/CTX-M-15/OXA-1 E. cloacae; OXA-181 E. coli; MHA, MHA + cloxacillin 250 mg/L, MHA + oxacillin 300 mg/L; ertapenem 10 µg). Supports Steps 1 and 4–7.
+   - Introduction: AmpC overproduction combined with reduced porin expression can cause carbapenem resistance, and inhibiting AmpC uncovers hidden mechanisms such as carbapenemases. Supports Step 2.
+   - Section 2.4 (Carbapenemase producers): 30 of 41 carbapenemase producers showed no meaningful diameter increase on either inhibitor medium. Supports Step 2.
+   - Section 2.3: colonies appearing inside an inhibition zone are ignored and the outer diameter is read. Supports Steps 3 and 6.
+2. EUCAST Disk Diffusion Method – Reading Guide (current version), https://www.eucast.org/ast_of_bacteria/disk_diffusion_methodology: zones are read at the point of complete inhibition, so any cleared band between disk and lawn is a zone. Supports Steps 3 and 4.
+3. EUCAST guidelines for detection of resistance mechanisms (v2.0), https://www.eucast.org/resistance_mechanisms: cloxacillin-based AmpC confirmation and carbapenemase detection in Enterobacterales. Supports Step 2.
 ```
 
 ### 21. Distractors
 ```
 Distractors (incorrect answers only). Note that in testing we provided the model all potential answers, including the GTFA.
-1) 41
-2) 46
-3) 70
-4) 24
-5) 0
+1) 45.0
+2) 49.2
+3) 76.7
+4) 27.5
+5) 0.0
 ```
 
-**Rationale (for reference only, not for the form):**
-- 41 (24 + 17): the narrow ertapenem ring on row A is missed or dismissed, so row A is counted. All three blind test runs gave this answer.
-- 46 (17 + 29): the colonies inside the row C ertapenem zone are read as growth to the disk.
-- 70 (24 + 17 + 29): both row A and row C are miscounted.
-- 24: row A only (ring missed, and row B excluded by misreading its plates).
-- 0: no isolate classified (row B's lack of a zone overlooked).
+**How each distractor arises (for reference, not for the form):**
+- 45.0 = (33 + 21)/120: the thin ETP band on row A is dismissed, so row A is counted. This is the answer every failed test run gave.
+- 49.2 = (21 + 38)/120: the specks inside the row C zone are taken as growth reaching the disk.
+- 76.7 = (33 + 21 + 38)/120: both of the above mistakes.
+- 27.5 = 33/120: only row A counted.
+- 0.0: no row reported (the bare ETP disks of row B overlooked).
 
-### 22. If a checker or reviewer flags something
-- **Row A ertapenem disputed:** zoom on the ETP disk of A(1). A narrow ring of clear agar separates the disk from the lawn, while the CTX and TIC disks on the same plate sit directly on the lawn. Zones are read at the edge of complete growth inhibition (EUCAST Reading Guide), so growth does not reach the ETP disk edge. This is the same convention as the approved Figure 5 task (narrow TIC ring on B(1)).
-- **Row C disputed:** Section 2.3 of the source paper says colonies inside a zone are ignored and the outer edge is read. The ETP zone on C(1) is clear, so growth does not reach the disk.
-- **Answer found in the paper?** No. The isolate numbers (24, 17, 29 and 20 of 90) are invented for this task, and the paper never asks this classification question, so 17 appears nowhere in it.
-- **Same paper as earlier accepted tasks?** Those used Supplementary Figure S3 and Figure 5. This task uses Figure 6, which has not been used.
-- **Pen-and-paper solvable?** Yes. It needs yes/no visual judgements on one disk across 12 plates and standard AmpC/carbapenemase reading knowledge, with no measurement or pixel tools.
-- **Multiple choice / answer space:** integer 0–90. The unequal group sizes make almost every combination of rows give a different total.
-- **Biology check:** row B (KPC-2 K. pneumoniae) is a true carbapenemase producer whose ertapenem resistance is not reversed by either inhibitor, which matches the classification. The rule is a screening rule; low-level carbapenemase producers (rows C and D, OXA-48-like) and the narrow ring on row A fall outside it as read.
+### 22. Answers to likely checker or reviewer flags
+- **"The row A band is just the disk edge."** The band encircles ETP on all three row A plates, but not the other six disks on those plates, which are the same size and type. It is therefore inhibition, not an artefact. Under the EUCAST reading rule (read at complete inhibition), growth does not reach the ETP disk.
+- **Row C colonies.** The prompt says to ignore colonies inside an otherwise clear zone. Section 2.3 of the source says the same.
+- **Answer in the paper?** No. The referral numbers (33, 21, 38 and 28 of 120) are hypothetical, and the paper never computes this percentage.
+- **Overlap with earlier tasks from this paper.** Those used Supplementary Figure S3 and Figure 5, with a different question (AmpC detection using cefoxitin and ticarcillin). This task uses Figure 6, a different drug (ertapenem), the opposite logic (resistance *not* reversed means carbapenemase) and a percentage output.
+- **Pen-and-paper solvable?** Yes. It needs twelve visual yes/no reads on one disk and a single division, with no measuring tools.
+- **Answer space.** Any percentage from 0.0 to 100.0. The unequal group sizes give a different value for almost every combination of rows.
