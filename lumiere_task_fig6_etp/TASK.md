@@ -88,17 +88,17 @@ This response also arrives at 45.0% by counting rows A and B. It describes the r
 
 ### 18. Image description
 ```
-The image is a 4 × 3 grid of top-down colour photographs of round Petri dishes on a dark backdrop. A bold black letter in parentheses, (A) to (D), marks the start of each row, and a bold number in a white box, (1) to (3), sits in the lower right corner of each photograph. All twelve dishes hold the same arrangement of seven white paper disks printed with black abbreviations: ETP at the top, CAZ upper left, ATM upper right, TCC left of centre, CTX lower left, FOX lower right and TIC at the bottom. Some dishes bear hand-written marker scribbles; there are no rulers, arrows or other overlays.
+The image is a 4 × 3 grid of top-down colour photographs of round Petri dishes on a dark backdrop. A bold black letter in parentheses, (A) to (D), marks the start of each row, and a bold number in a white box, (1) to (3), sits in the lower right corner of each photograph. All twelve dishes hold the same arrangement of seven white paper disks printed with black abbreviations: ETP at the top, CAZ upper left, ATM upper right, TCC left of centre, CTX lower left, FOX lower right and TIC at the bottom. Some dishes bear hand-written marker scribbles; there are no rulers, arrows or other overlays. Throughout the figure, the bacterial lawn is opaque, whereas areas without growth are clear, translucent agar through which the dark backdrop shows, so they look greyer than the surrounding lawn.
 
-Top row (A): the lawn is a pale grey-green with fine streaking. Six disks rest directly on the lawn. The ETP disk on each of the three dishes is encircled by a thin dark band, barely wider than the disk itself, whose outer margin is soft and speckled.
+Top row (A): the lawn is opaque and pale grey-green with fine streaking. Six disks rest directly on the lawn. The ETP disk on each of the three dishes is encircled by a thin band of clear agar, barely wider than the disk itself, whose outer margin is soft and speckled.
 
-Second row (B): the background looks dark blue-grey and streaked. ETP, CAZ, ATM, TCC and TIC rest directly on the lawn; FOX has at most a hairline rim. A slim but well-defined dark ring encircles CTX on all three dishes.
+Second row (B): the lawn is thinner and the dish looks blue-grey with streaks. ETP, CAZ, ATM, TCC and TIC rest directly on the lawn; FOX has at most a hairline rim. A slim but well-defined ring of clear agar encircles CTX on all three dishes.
 
-Third row (C): a pale, slightly blotchy lawn. Around ETP on every dish lies a dark ring about one and a half to two disk diameters wide, sprinkled with small pale specks. CAZ sits in a medium-sized dark patch (partly overlapped by marker ink on dishes 2 and 3) and ATM in a smaller hazy ring; CTX, TCC, FOX and TIC rest on the lawn.
+Third row (C): an opaque, pale, slightly blotchy lawn. Around ETP on every dish lies a clear zone about one and a half to two disk diameters across, sprinkled with small pale colonies. CAZ sits in a medium-sized clear zone (partly overlapped by marker ink on dishes 2 and 3) and ATM in a smaller clear zone with a hazy edge; CTX, TCC, FOX and TIC rest on the lawn.
 
-Bottom row (D): ETP, CAZ, ATM, CTX and FOX each sit at the centre of a broad round dark area spanning several disk diameters; a few pale specks lie near the upper margin of the ETP area. TCC and TIC rest on the pale lawn between these areas.
+Bottom row (D): ETP, CAZ, ATM, CTX and FOX each sit at the centre of a broad, round clear zone spanning several disk diameters; a few small pale colonies lie near the upper margin of the ETP zone. TCC and TIC rest on the opaque lawn between these zones.
 
-Image quality is good and in focus. Background tone varies from row to row, and the thin bands around ETP in row A and CTX in row B are the lowest-contrast features in the figure.
+Image quality is good and in focus. Lawn tone varies from row to row, and the thin clear bands around ETP in row A and CTX in row B are the lowest-contrast features in the figure.
 ```
 
 ### 19. Step-by-step solution
