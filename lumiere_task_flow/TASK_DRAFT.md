@@ -97,3 +97,7 @@ Note that in testing we provided the model all potential answers, including the 
 - Printed quadrant percentages plus clean axis labels mean the models just read them off. Avoid tasks whose only difficulty is reading printed numbers.
 - Defining the populations in the prompt ("early apoptotic", "how many cells per event") turns the task into arithmetic. This also risks a DOMAIN_KNOWLEDGE_FLOOR flag.
 - Strong models handle swapped axes and doublet logic well. Perceptual difficulty (dense or overlapping peaks, faint features) is what produces valid failures.
+
+## Feedback received (platform checker)
+- **FAILURE_BAR_NOT_MET (MAJOR), both blocks:** the checker judged the 6-vs-8 peak count a "bare misread" or "perceptual miscount, not biological misinterpretation". It was the same type of flag the PDF lists in Section 12 ("both models missed faint bands: judged a perceptual miss").
+  - **Rule going forward:** never design a task whose only failure point is counting or detecting faint features. The model's error must come from interpreting what a feature *means* (biology, gating logic, artifact vs signal), not from how many features it sees.
