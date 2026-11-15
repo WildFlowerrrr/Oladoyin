@@ -76,7 +76,7 @@ Artifacts and annotations: there are no colours, legends, scale bars or arrows o
 Note that in testing we provided the model all potential answers, including the GTFA.
 - **10.3:** misses the faint far-left hump and counts 7 divisions (72 / 7).
 - **8.0:** counts the undivided peak as a division, giving 9 (72 / 9).
-- **12.0:** counts only the 6 clearly separated peaks and ignores the shorter peak and the hump (72 / 6).
+- **12.0:** counts 6 divisions by merging adjacent tall central peaks and missing the far-left hump (72 / 6). Observed in both platform model responses.
 - **14.4:** counts 5 divisions, merging the closely spaced central peaks (72 / 5).
 - **7.2:** counts 10 divisions, treating the dashed-line edge and a trough shoulder as extra peaks (72 / 10).
 
