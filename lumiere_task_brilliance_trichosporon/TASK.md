@@ -117,7 +117,7 @@ Step 4: Image 3: dark navy/steel-blue growth with a dark blue halo → C. tropic
 Step 5: Image 4: teal/greenish-blue streaks with a rough, granular, dry-looking surface → greenish-blue Trichosporon pattern (neither the clean green of C. albicans nor the dark blue of C. tropicalis; the granular texture is not that of a smooth Candida colony). Counted: 16.
 Step 6: Image 5: smooth beige/cream-tan growth with no colour → "other yeast" pattern (e.g., N. glabrata, C. parapsilosis). Not Trichosporon.
 Step 7: Presumptive Trichosporon spp. = 11 + 16 = 27 of 96 isolates.
-Step 8: Percentage = 27 / 96 × 100 = 28.125 → 28.1%.
+Step 8: Percentage = 27 / 96 * 100 = 28.125 → 28.1%.
 Final Answer: 28.1
 ```
 
