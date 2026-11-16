@@ -8,7 +8,7 @@
 | Test run 1 (Opus) | 12 | Fail: called pale *C. krusei* (Image 4) *C. auris*; called both real *C. auris* plates "white, no halo" |
 | Test run 2 (Opus) | 41 | Fail: called turquoise *C. albicans* (Image 3) *C. auris* (applied the classic-CHROMagar "green" code for *C. albicans*) |
 | Test run 3 (Opus) | 12 | Fail: same as run 1 |
-| **GTFA** | **38** | |
+| **GTFA** | **38 isolates (prompt v1); 34.5% (prompt v2)** | |
 
 These failures are interpretation errors, not missed features. The models described each colour correctly but applied the wrong species–colour code for this medium.
 
@@ -58,25 +58,25 @@ Upload five images in this order. Each is the CHROMagar Candida Plus colony phot
 ```
 Images 1–5 are close-up photographs of yeast colonies grown from five different clinical isolates (one isolate per image), each subcultured on CHROMagar™ Candida Plus and photographed after 48 h of incubation at 35 °C.
 
-During an outbreak investigation, a hospital laboratory screens 110 yeast isolates from patient skin swabs on this medium; 19, 23, 41, 12 and 15 of them reproduce the colony appearance shown in Images 1, 2, 3, 4 and 5, respectively. Isolates are reported on the basis of colony appearance alone, before MALDI-TOF confirmation. How many of the 110 isolates are reported as presumptive Candida auris (Candidozyma auris)?
+During an outbreak investigation, a hospital laboratory screens 110 yeast isolates from patient skin swabs on this medium; 19, 23, 41, 12 and 15 of them reproduce the colony appearance shown in Images 1, 2, 3, 4 and 5, respectively. Isolates are reported on the basis of colony appearance alone, before MALDI-TOF confirmation; any number of the five colony types (none, one or several) may correspond to presumptive Candida auris (Candidozyma auris). What percentage of the 110 screened isolates are reported as presumptive C. auris?
 
-Report the answer as an integer (for example, 40).
+Report the answer as a percentage to one decimal place, without the % sign (for example, 27.3).
 ```
 
 ### 11. GTFA
 ```
-38
+34.5
 ```
 
 ### 12. Answer format
-Integer
+Decimal (one decimal place)
 
 ### 13–16. Responses, failure marking, error type
-Mark every answer that is not 38 as failed. For the error type, choose the option for **misinterpretation of visual evidence / domain-knowledge application**. Do not choose a perception option.
+Mark every answer that is not 34.5 as failed. For the error type, choose the option for **misinterpretation of visual evidence / domain-knowledge application**. Do not choose a perception option.
 
 ### 17. Failure justification (Block 1; replace [quote …] with the model's own sentences)
 ```
-The response perceives the colony colours essentially correctly but applies the wrong chromogenic identification key for this specific medium. CHROMagar Candida Plus uses a different colour code from the classic CHROMagar Candida: on Candida Plus, C. auris forms light blue/bluish-white to bluish-pink colonies with a bluish halo diffusing into the medium, C. albicans forms turquoise/green-blue colonies, C. tropicalis forms metallic blue colonies, and C. krusei forms pale pink colonies with smooth margins. The response states [quote …], i.e. it assigns the C. auris identity to [Image 3 / Image 4] and rejects Images 2 and 5. Image 3 is C. albicans (turquoise on this medium), Image 4 is C. krusei (pale pink, smooth margins), and Images 2 and 5 are the C. auris phenotype (bluish-pink/light colonies with a bluish halo), as documented by the source article for these isolates on CHROMagar Candida Plus. The correct count is therefore 23 + 15 = 38, not [model answer]. The error lies in interpreting the observed colours against the medium-specific species key (a domain-knowledge/interpretation failure), not in text recognition, arithmetic or failing to see the colonies.
+The response perceives the colony colours essentially correctly but applies the wrong chromogenic identification key for this specific medium. CHROMagar Candida Plus uses a different colour code from the classic CHROMagar Candida: on Candida Plus, C. auris forms light blue/bluish-white to bluish-pink colonies with a bluish halo diffusing into the medium, C. albicans forms turquoise/green-blue colonies, C. tropicalis forms metallic blue colonies, and C. krusei forms pale pink colonies with smooth margins. The response states [quote …], i.e. it assigns the C. auris identity to [Image 3 / Image 4] and rejects Images 2 and 5. Image 3 is C. albicans (turquoise on this medium), Image 4 is C. krusei (pale pink, smooth margins), and Images 2 and 5 are the C. auris phenotype (bluish-pink/light colonies with a bluish halo), as documented by the source article for these isolates on CHROMagar Candida Plus. The correct value is therefore (23 + 15)/110 = 34.5%, not [model answer]. The error lies in interpreting the observed colours against the medium-specific species key (a domain-knowledge/interpretation failure), not in text recognition, arithmetic or failing to see the colonies.
 ```
 
 ### 18. Image description
@@ -104,8 +104,9 @@ Step 3: Image 2: pale bluish-white/bluish-pink glossy colonies surrounded by dee
 Step 4: Image 3: bright turquoise to blue-green colonies → C. albicans pattern on this medium (a turquoise colour must not be mistaken for the light blue of C. auris). Not C. auris.
 Step 5: Image 4: pale lilac/pinkish-white colonies within a milky whitish area, no blue halo → C. krusei pattern. Not C. auris.
 Step 6: Image 5: pale lilac-blue/bluish-white glossy colonies surrounded by deep blue medium → C. auris pattern. Counted: 15.
-Step 7: Presumptive C. auris = 23 + 15 = 38 of 110.
-Final Answer: 38
+Step 7: Presumptive C. auris = 23 + 15 = 38 of 110 isolates.
+Step 8: Percentage = 38 / 110 × 100 = 34.545… → 34.5%.
+Final Answer: 34.5
 ```
 
 ### 20. References
@@ -120,21 +121,22 @@ Final Answer: 38
 ### 21. Distractors
 ```
 Distractors (incorrect answers only). Note that in testing we provided the model all potential answers, including the GTFA.
-1) 12
-2) 41
-3) 53
-4) 60
-5) 0
+1) 10.9
+2) 37.3
+3) 48.2
+4) 54.5
+5) 0.0
 ```
 
 **How each distractor arises (for reference, not for the form):**
-- 12: *C. krusei* (Image 4) called *C. auris* and the real *C. auris* plates rejected. Two of the three test runs gave this.
-- 41: turquoise *C. albicans* (Image 3) called *C. auris*. The third test run gave this.
-- 53 (41 + 12): both misidentifications.
-- 60 (41 + 19): every blue isolate (Images 1 and 3) called *C. auris*.
-- 0: no isolate recognised as *C. auris*.
+- 10.9 (12/110): *C. krusei* (Image 4) called *C. auris* and the real *C. auris* plates rejected. Two of the three test runs gave this.
+- 37.3 (41/110): turquoise *C. albicans* (Image 3) called *C. auris*. The third test run gave this.
+- 48.2 (53/110): both misidentifications.
+- 54.5 (60/110): every blue isolate (Images 1 and 3) called *C. auris*.
+- 0.0: no isolate recognised as *C. auris*.
 
 ### 22. Answers to likely checker or reviewer flags
+- **MULTIPLE_CHOICE_IMPLIED (v1).** The prompt now states that any number of colony types may qualify (32 possible combinations), and it asks for a computed percentage, not one of the listed counts.
 - **Perceptual miss?** No. The models described each colour correctly ("turquoise", "dark metallic blue", "pale lilac with milky halo", "white-cream"). Their error was mapping those colours to species with the wrong key for CHROMagar Candida Plus.
 - **Domain-knowledge floor.** The prompt names only the medium and the incubation. It gives no colour key, so the solver must supply the medium-specific identification knowledge.
 - **Answer found in the paper?** No. The isolate counts are hypothetical. The paper describes each strain but never computes this count.
