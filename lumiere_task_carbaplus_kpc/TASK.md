@@ -89,17 +89,17 @@ This response also reports 0 KPC producers because it describes Image 2 as [quot
 
 ### 18. Image description
 ```
-Four colour photographs, taken from above, of round Mueller-Hinton agar plates, each carrying five 6 mm cream-coloured paper disks printed "D73" plus a letter, with a matching black capital letter (A–E) written beside each disk. The disks are spread around each plate in a different arrangement on each image. There are no rulers, scale bars or arrows; Image 4 carries a handwritten blue "CW" mark near its top left, and Image 1 a small blue pen mark at the top edge.
+Four colour photographs, taken from above, of round Mueller-Hinton agar plates, each carrying five cream-coloured paper disks printed "D73" plus a letter, with a matching black capital letter (A–E) written beside each disk. The disks are spread around each plate in a different arrangement on each image. There are no rulers, scale bars or arrows; Image 4 carries a handwritten blue "CW" mark near its top left, and Image 1 a small blue pen mark at the top edge.
 
-Image 1: pale cream lawn. Disk A (right) is surrounded by a small round zone of clear agar about two disk widths across; disk B (bottom) by a similar or slightly larger clear zone; disks C (top right) and D (top left) each sit in a large round clear zone about three disk widths across, D's slightly larger. Disk E (left) sits in a wide round area densely filled with many small discrete colonies right up to the disk edge.
+Image 1: pale cream lawn. Disk A (right) is surrounded by a small round zone of clear agar; disk B (bottom) by a similar or slightly larger clear zone. Disks C (top right) and D (top left) each sit in a large round clear zone, clearly wider than the zones around A and B, with D's zone slightly larger than C's. Disk E (left) sits in a wide round area densely filled with many small discrete colonies that reach right up to the disk edge.
 
-Image 2: grey-green lawn with faint vertical streaks. Disks A (lower right), D (left) and E (lower left) sit directly on the lawn without a visible zone; disk B (top) has at most a faint shadow at its edge. Disk C (right) is surrounded by a faint, slightly darker, hazy zone of cleared agar roughly 1.7–1.8 disk widths across.
+Image 2: grey-green lawn with faint vertical streaks. Disks A (lower right), D (left) and E (lower left) sit directly on the lawn with no visible zone; disk B (top) has at most a faint shadow at its edge. Disk C (right) is surrounded by a faint, slightly darker, hazy zone of cleared agar that is narrow but extends visibly beyond the disk edge on all sides.
 
-Image 3: pale yellow lawn with streaks. Disk B (right) is surrounded by a distinct round clear zone about 2.5 disk widths across. Disk E (top left) has a narrow clear ring. Disks A (top right), C (left) and D (bottom) show only faint, poorly defined hazy shading around them.
+Image 3: pale yellow lawn with streaks. Disk B (right) is surrounded by a distinct round clear zone, the largest on this plate. Disk E (top left) has a narrow clear ring. Disks A (top right), C (left) and D (bottom) show only faint, poorly defined hazy shading around them.
 
-Image 4: pale yellow lawn. All five disks (A upper left, D top, B right, C lower left, E lower right) sit in large round clear zones of similar size, each about 3–3.5 disk widths across, some touching or nearly touching neighbouring zones; a few small colonies lie near the edge of the B zone.
+Image 4: pale yellow lawn. All five disks (A upper left, D top, B right, C lower left, E lower right) sit in large round clear zones of broadly similar size, some touching or nearly touching neighbouring zones; a few small colonies lie near the edge of the B zone.
 
-Photographs are in focus with even lighting; lawn colour differs between plates (grey-green in Image 2, pale cream/yellow in the others). The zone around disk C in Image 2 and the hazy shading in Image 3 are the lowest-contrast features.
+Photographs are in focus with even lighting; lawn colour differs between plates (grey-green in Image 2, pale cream or yellow in the others). The zone around disk C in Image 2 and the hazy shading in Image 3 are the lowest-contrast features.
 ```
 
 ### 19. Step-by-step solution
