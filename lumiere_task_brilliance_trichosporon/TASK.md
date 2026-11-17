@@ -111,13 +111,13 @@ All photographs are in focus with some reflections from the agar or growth surfa
 ### 19. Step-by-step solution
 ```
 Step 1: Identify the medium-specific key. On Brilliance Candida Agar, C. albicans (and C. dubliniensis) forms smooth green colonies, C. tropicalis forms dark blue colonies, Pichia kudriavzevii (C. krusei) forms rough pink colonies, and most other yeasts are beige/cream. Trichosporon spp. are hexosaminidase-positive and also produce a greenish-blue colour on this medium; their growth is dry, rough or granular (and in some species cerebriform with a fringe of hyphae), unlike the smooth glossy Candida colonies.
-Step 2: Image 1: smooth, glossy, uniformly bright green streaks → C. albicans pattern. Not Trichosporon.
-Step 3: Image 2: dry, wrinkled, cerebriform colonies with a hyphal fringe in a blue-green zone → Trichosporon pattern (T. asahii type). Counted: 11.
-Step 4: Image 3: dark navy/steel-blue growth with a dark blue halo → C. tropicalis pattern. Not Trichosporon.
-Step 5: Image 4: teal/greenish-blue streaks with a rough, granular, dry-looking surface → greenish-blue Trichosporon pattern (neither the clean green of C. albicans nor the dark blue of C. tropicalis; the granular texture is not that of a smooth Candida colony). Counted: 16.
-Step 6: Image 5: smooth beige/cream-tan growth with no colour → "other yeast" pattern (e.g., N. glabrata, C. parapsilosis). Not Trichosporon.
-Step 7: Presumptive Trichosporon spp. = 11 + 16 = 27 of 96 isolates.
-Step 8: Percentage = 27 / 96 * 100 = 28.125 → 28.1%.
+Step 2: Image 1: smooth, glossy, uniformly bright green streaks: C. albicans pattern. Not Trichosporon.
+Step 3: Image 2: dry, wrinkled, cerebriform colonies with a hyphal fringe in a blue-green zone: Trichosporon pattern (T. asahii type). Counted: 11.
+Step 4: Image 3: dark navy/steel-blue growth with a dark blue halo: C. tropicalis pattern. Not Trichosporon.
+Step 5: Image 4: teal/greenish-blue streaks with a rough, granular, dry-looking surface: greenish-blue Trichosporon pattern (neither the clean green of C. albicans nor the dark blue of C. tropicalis; the granular texture is not that of a smooth Candida colony). Counted: 16.
+Step 6: Image 5: smooth beige/cream-tan growth with no colour: "other yeast" pattern (e.g., N. glabrata, C. parapsilosis). Not Trichosporon.
+Step 7: Presumptive Trichosporon spp. = $11 + 16 = 27$ of 96 isolates.
+Step 8: Percentage = $\frac{27}{96} \times 100 = 28.125$, which rounds to 28.1.
 Final Answer: 28.1
 ```
 
